@@ -17,7 +17,27 @@ SELECT *
       --vlComprimentoCm * vlAlturaCm * vlLarguraCm AS Volume
 FROM silver.olist.produto
 
+WHERE (descCategoria  = 'bebes'
+OR descCategoria = 'perfumaria'
+OR descCategoria = 'artes')
+AND vlComprimentoCm * vlAlturaCm * vlLarguraCm > 1000
+--ORDER BY Volume ASC
+
+-- COMMAND ----------
+
+SELECT *      
+      --vlComprimentoCm * vlAlturaCm * vlLarguraCm AS Volume
+FROM silver.olist.produto
+
 WHERE descCategoria IN ('bebes','perfumaria','artes')
 AND vlComprimentoCm * vlAlturaCm * vlLarguraCm > 1000
 --ORDER BY Volume ASC
 
+
+-- COMMAND ----------
+
+SELECT *
+
+FROM silver.olist.produto
+
+WHERE descCategoria LIKE '%ferramentas%'
